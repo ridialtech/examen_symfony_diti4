@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Mes séances</h1>
+<ul>
+    {% for seance in seances %}
+        <li>{{ seance.date|date('Y-m-d H:i') }} - {{ seance.matiere }}</li>
+    {% else %}
+        <li>Aucune séance</li>
+    {% endfor %}
+</ul>
+<a href="{{ path('seance_new') }}">Nouvelle séance</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Présences de la séance {{ seance.date|date('Y-m-d H:i') }}</h1>
+<ul>
+    {% for p in presences %}
+        <li>{{ p.student.firstname }} {{ p.student.lastname }} : {{ p.status }}</li>
+    {% else %}
+        <li>Aucune présence</li>
+    {% endfor %}
+</ul>
+{% endblock %}
