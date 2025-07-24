@@ -26,6 +26,14 @@
                 <span>Mes séances</span>
             </a>
         </li>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('register') }}">
+                <i class="fas fa-user-plus"></i>
+                <span>Nouveau formateur</span>
+            </a>
+        </li>
+        {% endif %}
     </ul>
 
     <div id="content-wrapper" class="d-flex flex-column">
@@ -69,5 +77,4 @@
 <script src="{{ asset('site_copie/template/js/sb-admin-2.min.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>
-
 </html>
